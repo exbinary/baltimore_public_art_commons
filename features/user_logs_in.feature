@@ -2,12 +2,11 @@ Feature: User logs in
 
   Background:
     Given there is a user with email "foo@bar.com", password "foobar" and first_name "Bazbar"
-    When I go to /login
 
   Scenario: A user wants to login
     When I login as "foo@bar.com" with password "foobar"
     Then I should be redirected to the homepage
-    And see my first_name "Bazbar" in the secodary header
+    And see my first_name "Bazbar" in the secondary header
 
   Scenario: A user logs in with the wrong credentials
     When I login as "foo@bar.com" with password "poobar"
